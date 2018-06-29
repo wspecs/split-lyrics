@@ -1,6 +1,6 @@
 {
   "name": "split-lyrics",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Helper utils to split lilypond lyrics.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
