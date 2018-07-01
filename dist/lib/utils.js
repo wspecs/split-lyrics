@@ -4,7 +4,7 @@ var simple_text_1 = require("simple-text");
 exports.appName = 'split-lyrics';
 var SPLIT = ' -- ';
 var VOWELS = new Set(['a', 'e', 'i', 'o', 'u']);
-var DOUBLE_CONSONANTS = new Set(['ch', 'dy']);
+var DOUBLE_CONSONANTS = new Set(['ch', 'dy', 'pl']);
 function isVowel(letter) {
     return VOWELS.has(simple_text_1.simplify(letter.toLowerCase()));
 }
@@ -21,7 +21,7 @@ function splitWord(word) {
     }
     var index = word.split('').findIndex(function (x) { return isVowel(x); }) + 1;
     var nextConsonantIndex = word.substring(index).split('').findIndex(function (x) { return !isVowel(x); }) + index + 1;
-    if (nextConsonantIndex < 2) { // No consonant found.
+    if (index === nextConsonantIndex) { // One syllable word
         return word;
     }
     while (nextConsonantIndex < word.length) {

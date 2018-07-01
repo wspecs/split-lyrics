@@ -21,4 +21,8 @@ describe('word parser', () => {
   it('accents', () => {
     expect(lib.splitWord('Jézi')).to.equal('Jé -- zi');
   });
+
+  it('one syllable', () => {
+    expect(lib.splitWord('saeoui')).to.equal('saeoui');
+  });
 });

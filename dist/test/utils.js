@@ -18,4 +18,7 @@ describe('word parser', function () {
     it('accents', function () {
         chai_1.expect(lib.splitWord('Jézi')).to.equal('Jé -- zi');
     });
+    it('one syllable', function () {
+        chai_1.expect(lib.splitWord('saeoui')).to.equal('saeoui');
+    });
 });
